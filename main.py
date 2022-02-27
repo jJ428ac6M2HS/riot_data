@@ -12,14 +12,19 @@ import sys
 import pandas as pd
 import riotwatcher
 
-from test_functions import pull_data
+from test_functions import pull_data_test
+from functions import Functions
 
 # Put API key in file (not on git), DO NOT SHARE. Must be refreshed daily, or error 403
 # https://developer.riotgames.com/
 from api_key import api_key
 print(api_key)
 
-pull_data(api_key, region='euw1', player_name='Patheman')
+#pull_data_test(api_key, region='euw1', player_name='Patheman')
+
+fc = Functions(api_key, region='euw1', player_name='Patheman')
+fc.verif_algo()
+
 
 
 print('--- END ---')
